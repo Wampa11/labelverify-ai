@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="LabelVerify">
+  <!-- Faithful export of LabelVerifyMark as shown on the navy header (currentColor = white). -->
+  <rect width="40" height="40" fill="#12253F"/>
+  <rect
+    x="1.5"
+    y="1.5"
+    width="37"
+    height="37"
+    rx="1.5"
+    fill="#FFFFFF"
+    opacity="0.12"
+  />
+  <rect
+    x="1.5"
+    y="1.5"
+    width="37"
+    height="37"
+    rx="1.5"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="1.25"
+    opacity="0.45"
+  />
+  <!-- L -->
+  <path
+    d="M9 9.5 V29.5 H18.5"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="3"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+  />
+  <!-- V -->
+  <path
+    d="M20 9.5 L26.25 29.5 L32.5 9.5"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="3"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+  />
+  <!-- Verification motif  short gold check seated in the V trough -->
+  <path
+    d="M23.5 21.75 L26.25 26.25 L31.75 16.5"
+    fill="none"
+    stroke="#C9A227"
+    stroke-width="2.5"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+  />
+</svg>
