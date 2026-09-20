@@ -1,0 +1,264 @@
+{
+  "fixtures": 11,
+  "retry_count": 3,
+  "retry_rate": 0.273,
+  "retry_reasons": {
+    "government_warning_not_found": 3,
+    "critical_fields_not_found=4": 1,
+    "ocr_text_unusually_sparse": 2,
+    "critical_fields_not_found=5": 1
+  },
+  "status_counts": {
+    "FOUND": 43,
+    "UNCERTAIN": 3,
+    "NOT_FOUND": 9
+  },
+  "field_status": {
+    "brand_name": {
+      "FOUND": 10,
+      "UNCERTAIN": 1
+    },
+    "class_type": {
+      "FOUND": 8,
+      "UNCERTAIN": 1,
+      "NOT_FOUND": 2
+    },
+    "alcohol_content": {
+      "FOUND": 9,
+      "NOT_FOUND": 2
+    },
+    "net_contents": {
+      "FOUND": 9,
+      "NOT_FOUND": 2
+    },
+    "government_warning": {
+      "FOUND": 7,
+      "UNCERTAIN": 1,
+      "NOT_FOUND": 3
+    }
+  },
+  "uncertain_not_found_top": [
+    [
+      "government_warning:warning_header_missing",
+      3
+    ],
+    [
+      "class_type:class_type_missing",
+      2
+    ],
+    [
+      "alcohol_content:abv_pattern_missing",
+      2
+    ],
+    [
+      "net_contents:net_contents_pattern_missing",
+      2
+    ],
+    [
+      "class_type:Single weak keyword match for class/type; marked uncertain.",
+      1
+    ],
+    [
+      "government_warning:warning_for_ai",
+      1
+    ],
+    [
+      "brand_name:brand_ambiguous",
+      1
+    ]
+  ],
+  "latency_ms": {
+    "total_median": 817.8,
+    "fast_pass_median": 426.7,
+    "enhanced_pass_median": 721.7,
+    "total_max": 1831.3
+  },
+  "rows": [
+    {
+      "fixture": "capitalization_variation",
+      "retry": false,
+      "retry_reasons": [],
+      "selected": "fast",
+      "total_ms": 1100.7,
+      "fast_ms": 477.4,
+      "enh_ms": null,
+      "fields": {
+        "brand_name": "FOUND",
+        "class_type": "FOUND",
+        "alcohol_content": "FOUND",
+        "net_contents": "FOUND",
+        "government_warning": "FOUND"
+      }
+    },
+    {
+      "fixture": "clean_high_quality",
+      "retry": false,
+      "retry_reasons": [],
+      "selected": "fast",
+      "total_ms": 753.2,
+      "fast_ms": 426.7,
+      "enh_ms": null,
+      "fields": {
+        "brand_name": "FOUND",
+        "class_type": "FOUND",
+        "alcohol_content": "FOUND",
+        "net_contents": "FOUND",
+        "government_warning": "FOUND"
+      }
+    },
+    {
+      "fixture": "cluttered_decorative",
+      "retry": false,
+      "retry_reasons": [],
+      "selected": "fast",
+      "total_ms": 838.0,
+      "fast_ms": 465.1,
+      "enh_ms": null,
+      "fields": {
+        "brand_name": "FOUND",
+        "class_type": "FOUND",
+        "alcohol_content": "FOUND",
+        "net_contents": "FOUND",
+        "government_warning": "FOUND"
+      }
+    },
+    {
+      "fixture": "glare_overexposure",
+      "retry": false,
+      "retry_reasons": [],
+      "selected": "fast",
+      "total_ms": 744.2,
+      "fast_ms": 372.1,
+      "enh_ms": null,
+      "fields": {
+        "brand_name": "FOUND",
+        "class_type": "UNCERTAIN",
+        "alcohol_content": "FOUND",
+        "net_contents": "FOUND",
+        "government_warning": "UNCERTAIN"
+      }
+    },
+    {
+      "fixture": "low_contrast",
+      "retry": false,
+      "retry_reasons": [],
+      "selected": "fast",
+      "total_ms": 807.5,
+      "fast_ms": 457.0,
+      "enh_ms": null,
+      "fields": {
+        "brand_name": "FOUND",
+        "class_type": "FOUND",
+        "alcohol_content": "FOUND",
+        "net_contents": "FOUND",
+        "government_warning": "FOUND"
+      }
+    },
+    {
+      "fixture": "mild_blur",
+      "retry": true,
+      "retry_reasons": [
+        "government_warning_not_found"
+      ],
+      "selected": "fast",
+      "total_ms": 1457.4,
+      "fast_ms": 371.1,
+      "enh_ms": 721.7,
+      "fields": {
+        "brand_name": "FOUND",
+        "class_type": "FOUND",
+        "alcohol_content": "FOUND",
+        "net_contents": "FOUND",
+        "government_warning": "NOT_FOUND"
+      }
+    },
+    {
+      "fixture": "partially_unreadable",
+      "retry": true,
+      "retry_reasons": [
+        "government_warning_not_found",
+        "critical_fields_not_found=4",
+        "ocr_text_unusually_sparse"
+      ],
+      "selected": "fast",
+      "total_ms": 1165.6,
+      "fast_ms": 254.0,
+      "enh_ms": 557.9,
+      "fields": {
+        "brand_name": "FOUND",
+        "class_type": "NOT_FOUND",
+        "alcohol_content": "NOT_FOUND",
+        "net_contents": "NOT_FOUND",
+        "government_warning": "NOT_FOUND"
+      }
+    },
+    {
+      "fixture": "perspective_moderate",
+      "retry": false,
+      "retry_reasons": [],
+      "selected": "fast",
+      "total_ms": 811.6,
+      "fast_ms": 455.9,
+      "enh_ms": null,
+      "fields": {
+        "brand_name": "FOUND",
+        "class_type": "FOUND",
+        "alcohol_content": "FOUND",
+        "net_contents": "FOUND",
+        "government_warning": "FOUND"
+      }
+    },
+    {
+      "fixture": "punctuation_apostrophe",
+      "retry": false,
+      "retry_reasons": [],
+      "selected": "fast",
+      "total_ms": 817.8,
+      "fast_ms": 474.5,
+      "enh_ms": null,
+      "fields": {
+        "brand_name": "FOUND",
+        "class_type": "FOUND",
+        "alcohol_content": "FOUND",
+        "net_contents": "FOUND",
+        "government_warning": "FOUND"
+      }
+    },
+    {
+      "fixture": "rotated_15deg",
+      "retry": true,
+      "retry_reasons": [
+        "government_warning_not_found",
+        "critical_fields_not_found=5",
+        "ocr_text_unusually_sparse"
+      ],
+      "selected": "enhanced",
+      "total_ms": 1831.3,
+      "fast_ms": 332.4,
+      "enh_ms": 897.5,
+      "fields": {
+        "brand_name": "UNCERTAIN",
+        "class_type": "NOT_FOUND",
+        "alcohol_content": "NOT_FOUND",
+        "net_contents": "NOT_FOUND",
+        "government_warning": "NOT_FOUND"
+      }
+    },
+    {
+      "fixture": "small_compliance_text",
+      "retry": false,
+      "retry_reasons": [],
+      "selected": "fast",
+      "total_ms": 750.2,
+      "fast_ms": 408.7,
+      "enh_ms": null,
+      "fields": {
+        "brand_name": "FOUND",
+        "class_type": "FOUND",
+        "alcohol_content": "FOUND",
+        "net_contents": "FOUND",
+        "government_warning": "FOUND"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "fixture_id": "punctuation_apostrophe",
+  "image_file": "punctuation_apostrophe.png",
+  "category": "punctuation",
+  "brand_name": {
+    "exact_text": "O'HARA'S RESERVE",
+    "semantic_value": "O'HARA'S RESERVE"
+  },
+  "class_type": {
+    "exact_text": "Irish Whiskey",
+    "semantic_value": "Irish Whiskey"
+  },
+  "alcohol_content_abv": {
+    "exact_text": "45% Alc./Vol.",
+    "semantic_value": "45"
+  },
+  "net_contents": {
+    "exact_text": "750 mL",
+    "semantic_value": "750"
+  },
+  "government_health_warning": {
+    "exact_text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "semantic_value": "GOVERNMENT WARNING"
+  },
+  "notes": "Apostrophe in brand",
+  "is_synthetic": true,
+  "disclaimer": "Synthetic evaluation fixture only. Not an actual approved TTB label."
+}

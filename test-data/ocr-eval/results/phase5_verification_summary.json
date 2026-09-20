@@ -1,0 +1,218 @@
+{
+  "n": 11,
+  "overall": {
+    "PASS": 7,
+    "REVIEW": 3,
+    "FAIL": 1
+  },
+  "reason_codes": [
+    [
+      "BRAND_MATCH",
+      9
+    ],
+    [
+      "ABV_MATCH",
+      9
+    ],
+    [
+      "NET_CONTENTS_MATCH",
+      9
+    ],
+    [
+      "OCR_LOW_QUALITY",
+      9
+    ],
+    [
+      "CLASS_TYPE_MATCH",
+      8
+    ],
+    [
+      "WARNING_PRESENT_MATCH",
+      7
+    ],
+    [
+      "EXTRACTION_UNCERTAIN",
+      2
+    ],
+    [
+      "WARNING_PARTIAL",
+      1
+    ],
+    [
+      "BRAND_MISMATCH",
+      1
+    ]
+  ],
+  "latency": {
+    "median": 824.5,
+    "p95": 1774.7,
+    "max": 1774.7
+  },
+  "rows": [
+    {
+      "fixture": "capitalization_variation",
+      "overall": "PASS",
+      "pass": 5,
+      "review": 0,
+      "fail": 0,
+      "ms": 1072.2,
+      "codes": [
+        "BRAND_MATCH",
+        "CLASS_TYPE_MATCH",
+        "ABV_MATCH",
+        "NET_CONTENTS_MATCH",
+        "WARNING_PRESENT_MATCH"
+      ]
+    },
+    {
+      "fixture": "clean_high_quality",
+      "overall": "PASS",
+      "pass": 5,
+      "review": 0,
+      "fail": 0,
+      "ms": 748.8,
+      "codes": [
+        "BRAND_MATCH",
+        "CLASS_TYPE_MATCH",
+        "ABV_MATCH",
+        "NET_CONTENTS_MATCH",
+        "WARNING_PRESENT_MATCH"
+      ]
+    },
+    {
+      "fixture": "cluttered_decorative",
+      "overall": "PASS",
+      "pass": 5,
+      "review": 0,
+      "fail": 0,
+      "ms": 797.1,
+      "codes": [
+        "BRAND_MATCH",
+        "CLASS_TYPE_MATCH",
+        "ABV_MATCH",
+        "NET_CONTENTS_MATCH",
+        "WARNING_PRESENT_MATCH"
+      ]
+    },
+    {
+      "fixture": "glare_overexposure",
+      "overall": "REVIEW",
+      "pass": 3,
+      "review": 2,
+      "fail": 0,
+      "ms": 785.3,
+      "codes": [
+        "BRAND_MATCH",
+        "EXTRACTION_UNCERTAIN",
+        "ABV_MATCH",
+        "NET_CONTENTS_MATCH",
+        "WARNING_PARTIAL"
+      ]
+    },
+    {
+      "fixture": "low_contrast",
+      "overall": "PASS",
+      "pass": 5,
+      "review": 0,
+      "fail": 0,
+      "ms": 775.0,
+      "codes": [
+        "BRAND_MATCH",
+        "CLASS_TYPE_MATCH",
+        "ABV_MATCH",
+        "NET_CONTENTS_MATCH",
+        "WARNING_PRESENT_MATCH"
+      ]
+    },
+    {
+      "fixture": "mild_blur",
+      "overall": "REVIEW",
+      "pass": 4,
+      "review": 1,
+      "fail": 0,
+      "ms": 1440.1,
+      "codes": [
+        "BRAND_MATCH",
+        "CLASS_TYPE_MATCH",
+        "ABV_MATCH",
+        "NET_CONTENTS_MATCH",
+        "OCR_LOW_QUALITY"
+      ]
+    },
+    {
+      "fixture": "partially_unreadable",
+      "overall": "FAIL",
+      "pass": 0,
+      "review": 4,
+      "fail": 1,
+      "ms": 1189.1,
+      "codes": [
+        "BRAND_MISMATCH",
+        "OCR_LOW_QUALITY",
+        "OCR_LOW_QUALITY",
+        "OCR_LOW_QUALITY",
+        "OCR_LOW_QUALITY"
+      ]
+    },
+    {
+      "fixture": "perspective_moderate",
+      "overall": "PASS",
+      "pass": 5,
+      "review": 0,
+      "fail": 0,
+      "ms": 849.3,
+      "codes": [
+        "BRAND_MATCH",
+        "CLASS_TYPE_MATCH",
+        "ABV_MATCH",
+        "NET_CONTENTS_MATCH",
+        "WARNING_PRESENT_MATCH"
+      ]
+    },
+    {
+      "fixture": "punctuation_apostrophe",
+      "overall": "PASS",
+      "pass": 5,
+      "review": 0,
+      "fail": 0,
+      "ms": 824.5,
+      "codes": [
+        "BRAND_MATCH",
+        "CLASS_TYPE_MATCH",
+        "ABV_MATCH",
+        "NET_CONTENTS_MATCH",
+        "WARNING_PRESENT_MATCH"
+      ]
+    },
+    {
+      "fixture": "rotated_15deg",
+      "overall": "REVIEW",
+      "pass": 0,
+      "review": 5,
+      "fail": 0,
+      "ms": 1774.7,
+      "codes": [
+        "EXTRACTION_UNCERTAIN",
+        "OCR_LOW_QUALITY",
+        "OCR_LOW_QUALITY",
+        "OCR_LOW_QUALITY",
+        "OCR_LOW_QUALITY"
+      ]
+    },
+    {
+      "fixture": "small_compliance_text",
+      "overall": "PASS",
+      "pass": 5,
+      "review": 0,
+      "fail": 0,
+      "ms": 748.0,
+      "codes": [
+        "BRAND_MATCH",
+        "CLASS_TYPE_MATCH",
+        "ABV_MATCH",
+        "NET_CONTENTS_MATCH",
+        "WARNING_PRESENT_MATCH"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+# Backend package metadata and dependencies for LabelVerify AI (FastAPI verification service).
+# Architectural responsibility: declare installable backend package and tool config only.
+
+[build-system]
+requires = ["setuptools>=75.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "labelverify-ai-backend"
+version = "0.1.0"
+description = "LabelVerify AI backend — alcohol label verification prototype (decision support only)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115.0",
+  "uvicorn[standard]>=0.32.0",
+  "pydantic>=2.9.0",
+  "pydantic-settings>=2.6.0",
+  "python-multipart>=0.0.12",
+  "pillow>=11.0.0",
+  "opencv-python-headless>=4.10.0",
+  "rapidfuzz>=3.10.0",
+  "httpx>=0.27.0",
+  "openpyxl>=3.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.0",
+  "pytest-asyncio>=0.24.0",
+  "ruff>=0.7.0",
+]
+ocr-tesseract = [
+  "pytesseract>=0.3.10",
+]
+# PaddleOCR is heavy and platform-sensitive. Prefer an isolated .venv-ocr (Python 3.12).
+# On Windows, paddlepaddle 3.x may initialize but fail inference (OneDNN). See docs/OCR_EVALUATION.md.
+ocr-paddle = [
+  "paddlepaddle>=2.6.0",
+  "paddleocr>=2.7.0,<3.0.0",
+]
+ocr-eval = [
+  "pytesseract>=0.3.10",
+  "paddlepaddle>=2.6.0",
+  "paddleocr>=2.7.0,<3.0.0",
+]
+# Phase 8.8 decorative-typography spike — keep out of production install.
+ocr-easyocr = [
+  "easyocr>=1.7.0",
+  "torch>=2.0.0",
+  "torchvision>=0.15.0",
+]
+ocr-rapidocr = [
+  "rapidocr>=2.0.0",
+  "onnxruntime>=1.16.0",
+  "numpy>=1.26.0,<2",
+]
+# Alias for production optional secondary OCR (same as ocr-rapidocr).
+ocr-secondary = [
+  "rapidocr>=2.0.0",
+  "onnxruntime>=1.16.0",
+  "numpy>=1.26.0,<2",
+]
+ocr-eval-phase88 = [
+  "pytesseract>=0.3.10",
+  "numpy>=1.26.0,<2",
+  "easyocr>=1.7.0",
+  "torch>=2.0.0",
+  "torchvision>=0.15.0",
+  "rapidocr>=2.0.0",
+  "onnxruntime>=1.16.0",
+  "psutil>=5.9.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

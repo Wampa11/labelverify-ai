@@ -1,0 +1,18 @@
+---
+description: Regulatory rules documentation and implementation gates
+globs: backend/app/rules/**/*
+alwaysApply: false
+---
+
+# Regulatory rules gate
+
+Do **not** invent regulatory requirements.
+
+Before implementing or expanding a rule:
+
+1. Complete the template in `docs/RULES.md` (or `docs/rules/<id>.md`) with authoritative sources
+2. Define PASS, REVIEW, and FAIL criteria and known limitations
+3. Prefer deterministic evaluation; AI assist is optional and never “regulatory certainty”
+4. Government warning work must separately address wording, capitalization, detectable formatting, OCR uncertainty, and other source-backed concerns
+
+Rule code consumes normalized evidence — not OCR libraries or OpenAI SDKs.

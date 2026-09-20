@@ -1,0 +1,28 @@
+{
+  "fixture_id": "decorative_whispering_pine",
+  "image_file": "decorative_whispering_pine.png",
+  "category": "decorative_flat_label",
+  "brand_name": {
+    "exact_text": "WHISPERING PINE",
+    "semantic_value": "WHISPERING PINE"
+  },
+  "class_type": {
+    "exact_text": "KENTUCKY STRAIGHT BOURBON WHISKEY",
+    "semantic_value": "BOURBON WHISKEY"
+  },
+  "alcohol_content_abv": {
+    "exact_text": "45% ALC./VOL.",
+    "semantic_value": "45"
+  },
+  "net_contents": {
+    "exact_text": "750 mL",
+    "semantic_value": "750"
+  },
+  "government_health_warning": {
+    "exact_text": "GOVERNMENT WARNING",
+    "semantic_value": "GOVERNMENT WARNING"
+  },
+  "notes": "Manual flat-label regression image (evaluation only). Script/cursive brand over illustrated background; Tesseract often misses brand tokens entirely.",
+  "is_synthetic": false,
+  "disclaimer": "Evaluation fixture only. Not an actual approved TTB label."
+}

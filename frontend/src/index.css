@@ -1,0 +1,176 @@
+/**
+ * Global styles and Treasury-inspired design tokens for LabelVerify.
+ * Architectural responsibility: centralized institutional palette — no scattered arbitrary colors.
+ *
+ * Identity: independent prototype for compliance agents (not official Treasury software).
+ * Do not use the official Treasury seal or agency insignia.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Institutional navy / blue family */
+  --navy: 215 55% 16%;
+  --primary: 213 54% 28%;
+  --primary-foreground: 0 0% 100%;
+  --secondary-blue: 207 42% 42%;
+  --accent-gold: 42 52% 46%;
+
+  /* Neutrals */
+  --background: 210 18% 96%;
+  --surface: 0 0% 100%;
+  --foreground: 215 28% 12%;
+  --muted: 210 14% 92%;
+  --muted-foreground: 215 12% 36%;
+  --border: 214 14% 78%;
+  --input: 214 14% 78%;
+  --ring: 213 54% 32%;
+
+  /* Semantic status — functional, not institutional blue */
+  --pass: 152 42% 28%;
+  --pass-foreground: 0 0% 100%;
+  --pass-soft: 152 30% 94%;
+  --review: 38 68% 36%;
+  --review-foreground: 0 0% 100%;
+  --review-soft: 40 55% 94%;
+  --fail: 0 62% 36%;
+  --fail-foreground: 0 0% 100%;
+  --fail-soft: 0 45% 95%;
+
+  --destructive: 0 62% 36%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* Restrained radius for operational UI */
+  --radius: 0.125rem;
+}
+
+@layer base {
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .lv-panel {
+    @apply border border-border bg-surface;
+  }
+
+  .lv-section-title {
+    @apply font-display text-base font-semibold tracking-tight text-foreground;
+  }
+
+  .lv-label {
+    @apply text-sm font-semibold text-foreground;
+  }
+
+  .lv-help {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .lv-input {
+    @apply mt-1 w-full border border-input bg-surface px-3 py-2 text-sm text-foreground;
+    border-radius: var(--radius);
+  }
+
+  .lv-input:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  .lv-input:disabled {
+    @apply cursor-not-allowed opacity-60;
+  }
+
+  .lv-btn {
+    @apply inline-flex items-center justify-center gap-2 border px-3 py-2 text-sm font-semibold transition-colors;
+    border-radius: var(--radius);
+  }
+
+  .lv-btn:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  .lv-btn:disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  .lv-btn-primary {
+    @apply lv-btn border-primary bg-primary text-primary-foreground hover:bg-navy;
+  }
+
+  .lv-btn-secondary {
+    @apply lv-btn border-border bg-surface text-foreground hover:border-primary;
+  }
+
+  .lv-btn-ghost {
+    @apply lv-btn border-transparent bg-transparent text-primary underline-offset-2 hover:underline;
+  }
+
+  /* Institutional Review Setup selection tiles */
+  .lv-setup-tile {
+    @apply flex w-full items-start gap-3 border border-border bg-surface px-3.5 py-3.5 text-left text-navy transition-colors;
+    border-radius: var(--radius);
+  }
+
+  .lv-setup-tile:hover {
+    border-color: hsl(var(--primary));
+    box-shadow: inset 3px 0 0 0 hsl(var(--accent-gold));
+  }
+
+  .lv-setup-tile:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  .lv-setup-tile:active {
+    background-color: hsl(var(--muted));
+  }
+
+  /* Secondary informational control — not a review-type tile */
+  .lv-setup-info {
+    @apply flex w-full items-start gap-3 border border-dashed border-border/80 bg-transparent px-3 py-3 text-left text-muted-foreground transition-colors;
+    border-radius: var(--radius);
+  }
+
+  .lv-setup-info:hover {
+    border-color: hsl(var(--border));
+    background-color: hsl(var(--muted) / 0.45);
+    color: hsl(var(--foreground));
+  }
+
+  .lv-setup-info:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  .lv-workspace-panel {
+    @apply flex flex-col border border-border/90 bg-surface;
+    border-radius: var(--radius);
+  }
+
+  .lv-workspace-panel-header {
+    @apply border-b border-border/80 px-4 py-3 sm:px-5;
+  }
+}

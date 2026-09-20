@@ -1,0 +1,37 @@
+---
+description: Backend Python architecture and verification pipeline conventions
+globs: backend/**/*.py
+alwaysApply: false
+---
+
+# Backend conventions
+
+## Package ownership
+
+| Package | Owns |
+|---------|------|
+| `api` | HTTP only — map requests/responses |
+| `services` | Pipeline orchestration |
+| `ocr` | OCR port + adapters |
+| `preprocessing` | Image validate/preprocess |
+| `extraction` | Field extraction from OCR evidence |
+| `normalization` | Canonical value forms |
+| `rules` | Deterministic checks (source-documented) |
+| `confidence` | PASS/REVIEW/FAIL policy from evidence |
+| `ai` | Provider interface; OpenAI adapter only here |
+| `persistence` | SQLite / repositories |
+| `batch` | Concurrency-limited batch jobs |
+| `core` | Config, exceptions, timing |
+| `models` | Shared Pydantic models |
+
+## Result status
+
+Use only `PASS`, `REVIEW`, `FAIL`. Include explanation and decision method on every check result. Include `processing_time_ms` on verification results.
+
+## Errors
+
+Do not swallow exceptions. Convert to explicit failure/REVIEW with explanation, or re-raise after logging.
+
+## Rules modules
+
+When implementing a rule, module docs must identify: requirement, authoritative source, PASS/REVIEW/FAIL criteria, limitations (see `docs/RULES.md`).

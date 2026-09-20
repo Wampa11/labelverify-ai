@@ -1,0 +1,25 @@
+# Root build context exclusions (when used); per-service .dockerignore also applies.
+.git/
+.github/
+.cursor/
+**/node_modules/
+**/__pycache__/
+**/.venv/
+**/venv/
+**/.pytest_cache/
+**/.ruff_cache/
+**/dist/
+**/coverage/
+**/.env
+**/.env.*
+!**/.env.example
+**/*.pyc
+agent-transcripts/
+docs/**/*.png
+.cloudflared/
+**/credentials*.json
+*tunnel*.json
+*-credentials.json
+*.pem
+*.key
+secrets/

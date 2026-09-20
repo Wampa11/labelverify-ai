@@ -1,0 +1,98 @@
+# LabelVerify AI — git ignore rules for secrets, envs, builds, and local data.
+
+# Secrets and local env (never commit real keys)
+.env
+.env.local
+.env.*.local
+.env.*
+!.env.example
+
+backend/.env
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# Keep committed templates
+!backend/.env.example
+!frontend/.env.example
+!.env.example
+
+*.pem
+*.key
+secrets/
+**/credentials*.json
+
+# Cloudflare Tunnel / Access credentials (host-side only — never commit)
+.cloudflared/
+**/cloudflared/
+*tunnel*.json
+*-credentials.json
+.cf-access*
+CF_TUNNEL*
+CLOUDFLARE_*TOKEN*
+
+# Python
+.venv/
+venv/
+env/
+.venv-ocr/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+*.sqlite3
+*.db
+
+# Backend local data (SQLite, uploads)
+backend/data/
+backend/**/data/uploads/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+frontend/build/
+frontend/coverage/
+*.tsbuildinfo
+.npm
+.pnpm-store/
+
+# Playwright (including accidental nested output under frontend/frontend/)
+frontend/test-results/
+frontend/playwright-report/
+frontend/blob-report/
+frontend/playwright/.cache/
+frontend/frontend/
+
+# Temporary uploaded labels / processing scratch
+tmp/
+temp/
+uploads/
+*.tmp
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*~
+
+# PaddleOCR model caches (large downloaded weights)
+.paddleocr/
+
+# Docker
+*.log
+
+**/test-results/
+**/playwright-report/

@@ -1,0 +1,42 @@
+---
+description: Frontend React/TypeScript usability and structure conventions
+globs: frontend/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Frontend conventions
+
+## Users
+
+Compliance agents with varying technical skill. Keep copy plain. Primary actions visible on the main surface — do not hide verify/upload/review in nested menus.
+
+## Visual system
+
+Follow `docs/UI_DESIGN.md` and ADR-021:
+
+- Treasury-inspired institutional navy / blue / gold tokens from `index.css`
+- No official Treasury seal or agency insignia
+- No purple AI branding, gradients, glassmorphism, sparkle/robot imagery
+- Semantic PASS / REVIEW / FAIL colors with text + icon
+- Reuse `AppShell`, `StatusBadge`, and `.lv-*` component classes for Batch Review later
+
+## Structure
+
+- `components/upload` — intake
+- `components/verification` — results and explanations
+- `components/batch` — batch flows (not implemented)
+- `components/common` — shared UI (`AppShell`, mark, status)
+- `services` — backend HTTP client only (no secrets)
+- `types` — API-aligned models including PASS/REVIEW/FAIL
+
+## Security
+
+Never add OpenAI keys or other secrets to Vite env. All AI calls stay on the backend.
+
+## Explainability
+
+Surfaces must be able to show application vs detected values, status, explanation, decision method, and processing time when the API provides them. Keep technical OCR/AI details in disclosures.
+
+## File headers
+
+Every `.ts`/`.tsx` file starts with a short comment describing purpose and architectural responsibility.

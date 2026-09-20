@@ -1,0 +1,61 @@
+---
+description: LabelVerify AI core architecture, phase constraints, and coding standards
+alwaysApply: true
+---
+
+# LabelVerify AI — Project Rules
+
+## Prototype framing
+
+- This is a **decision-support prototype**, not a final regulatory determination system.
+- Prefer accuracy, explainability, and human review over opaque automation.
+- Ambiguous / low-confidence outcomes → **REVIEW**, never silent auto-FAIL.
+
+## Phase discipline
+
+- Feature freeze is in effect for Phase 8 release candidate work unless testing finds a real defect.
+- Do not implement new OCR engines, expand AI functionality, change fuzzy thresholds without defect evidence, redesign UI, or add durable queues/databases unless deployment testing proves necessity.
+- Do not invent regulatory requirements. Rules need authoritative sources documented per `docs/RULES.md` first.
+- Do not invent confidence values or treat AI confidence as regulatory certainty.
+- Image quality GOOD/WARNING/POOR is an engineering heuristic, not regulatory certainty.
+
+## Architecture boundaries
+
+Keep concerns separated: API routing, OCR, preprocessing, extraction, normalization, rules, confidence, AI provider, persistence, batch.
+
+- No regulatory logic in route handlers
+- No OCR logic inside rules
+- No OpenAI SDK / vendor types outside `backend/app/ai/`
+- Business logic must be testable without running the web server
+- Fallbacks must be **observable and explainable** — never silent
+- Do not permanently store uploads unless an ADR says otherwise
+
+## Architecture change control
+
+Before substantially changing architecture, schema, or patterns:
+
+1. Identify the problem
+2. Explain why the current design is insufficient
+3. Document the proposed change in `docs/DECISIONS.md`
+
+Do not add major frameworks/dependencies without justification and an ADR.
+
+## File and API documentation
+
+Every source file starts with a concise comment/docstring stating:
+
+- what the file does
+- what architectural responsibility it owns
+
+Public/exported classes, functions, React components, services, providers, and important types get a concise docstring/comment when purpose is not obvious.
+
+Comments explain **why**, not obvious syntax. Use descriptive names; avoid unexplained abbreviations.
+
+## Security
+
+- Never put secrets in frontend env (`VITE_*` must not hold API keys)
+- Never commit `.env` / `backend/.env` or real keys; use `.env.example` / `backend/.env.example` placeholders only
+- Local backend loads `backend/.env`; OS/container env overrides dotenv
+- OpenAI is backend-only
+- Treat uploads as untrusted; validate on the server; do not leak paths or stack traces
+- Follow `.cursor/rules/secrets-env.mdc` for secret-bearing env files

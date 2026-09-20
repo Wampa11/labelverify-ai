@@ -1,0 +1,19 @@
+# Files ignored when building the backend Docker image.
+# Secrets must never enter image layers — inject at runtime via Compose env_file.
+__pycache__/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+data/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+**/credentials*.json
+.cloudflared/
+*tunnel*.json
+*-credentials.json

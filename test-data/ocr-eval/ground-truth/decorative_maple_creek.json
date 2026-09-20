@@ -1,0 +1,28 @@
+{
+  "fixture_id": "decorative_maple_creek",
+  "image_file": "decorative_maple_creek.png",
+  "category": "decorative_flat_label",
+  "brand_name": {
+    "exact_text": "MAPLE CREEK",
+    "semantic_value": "MAPLE CREEK"
+  },
+  "class_type": {
+    "exact_text": "KENTUCKY STRAIGHT BOURBON WHISKEY",
+    "semantic_value": "BOURBON WHISKEY"
+  },
+  "alcohol_content_abv": {
+    "exact_text": "45% ALC./VOL.",
+    "semantic_value": "45"
+  },
+  "net_contents": {
+    "exact_text": "750 mL",
+    "semantic_value": "750"
+  },
+  "government_health_warning": {
+    "exact_text": "GOVERNMENT WARNING",
+    "semantic_value": "GOVERNMENT WARNING"
+  },
+  "notes": "Manual flat-label regression image (evaluation only). Large arched serif brand; leading M often dropped by Tesseract FAST.",
+  "is_synthetic": false,
+  "disclaimer": "Evaluation fixture only. Not an actual approved TTB label."
+}
